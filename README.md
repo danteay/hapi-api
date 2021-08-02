@@ -79,7 +79,14 @@ from all the business and data access logic, also makes easy to maintain all cod
 
 ### Requirement number 2 explanation
 
-### Refactoring DB proposal
+![DB-ER-diagram](https://github.com/danteay/habi-api/blob/master/Habi-Liked.png?raw=true)
+
+If we continue to use same DB structure, in order to keep tracking of all property likes of the any user
+we should implement the DB structure of the past image and create the `liked` and `liked_history` tables,
+where the `table` will keep the current liked properties of a user and can be deleted it at any time. To keep
+history track for all liked properties the `liked_history` table will keep any type of liked movement (liked
+or unliked) and keep the relation between property, user and the time of the movement execution
+
 
 [1]: https://serverless.com/
 [2]: https://github.com/dherault/serverless-offline
