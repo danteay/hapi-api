@@ -87,6 +87,10 @@ where the `table` will keep the current liked properties of a user and can be de
 history track for all liked properties the `liked_history` table will keep any type of liked movement (liked
 or unliked) and keep the relation between property, user and the time of the movement execution
 
+If we could choose any other DB to store Liked properties I would suggest AWS QLDB (AWS Quantum Ledger Data Base).
+This database keep tracking of all the historic changes of a record even when the record was deleted. This DB has
+immutable records so, any modification of a record at the end is a new record with new values and the DB keeps
+the latest value for that entry.
 
 [1]: https://serverless.com/
 [2]: https://github.com/dherault/serverless-offline
