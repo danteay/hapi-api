@@ -1,0 +1,20 @@
+.environment: &default_environment
+  APP_NAME: ${self:service}
+  CORS: "true"
+  DATABASE_URL: "mysql://pruebas:VGbt3Day5R@3.130.126.210:3309/habi_db"
+  DATABASE_COMMIT: "true"
+
+dev:
+  environment:
+    <<: *default_environment
+    LOG_LEVEL: "DEBUG"
+
+staging:
+  environment:
+    <<: *default_environment
+    LOG_LEVEL: "DEBUG"
+
+production:
+  environment:
+    <<: *default_environment
+    LOG_LEVEL: "INFO"

@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "habi-api"
+version = "0.0.0"
+description = "Simple Api"
+authors = ["Eduardo Aguilar <dante.aguilar41@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+elasticlogger= "~=2.3.0"
+fastjsonschema= "~=2.15.0"
+requests = "~=2.26.0"
+mysql-connector-python = "^8.0.26"
+pydbrepo = "^0.3.3"
+
+[tool.poetry.dev-dependencies]
+radon= "~=5.0.1"
+commitizen= "~=2.17.0"
+expects= "~=0.9.0"
+isort= "~=5.9.3"
+pylint= "~=2.9.6"
+coverage = "~=5.5"
+mamba = "~=0.11.2"
+yapf = "^0.31.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

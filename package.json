@@ -1,0 +1,10 @@
+{
+  "author": "Eduardo Aguilar <dante.aguilar41@gmail.com>",
+  "name": "habi-api",
+  "devDependencies": {
+    "serverless": "^2.52.1",
+    "serverless-offline": "^6.9.0",
+    "serverless-prune-plugin": "^1.5.1",
+    "serverless-python-requirements": "^5.1.1"
+  }
+}

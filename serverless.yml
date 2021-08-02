@@ -1,0 +1,43 @@
+service: habi-api
+
+plugins:
+  - serverless-prune-plugin
+  - serverless-python-requirements
+  - serverless-offline
+
+variablesResolutionMode: 20210326
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: ${opt:stage, "dev"}
+  region: ${opt:region, "us-east-1"}
+  iam: ${file(config/iam.yml):${self:provider.stage}.iam}
+  environment: ${file(config/environment.yml):${self:provider.stage}.environment}
+
+  lambdaHashingVersion: 20201221
+
+functions:
+  find_properties:
+    handler: src.routes.properties.find
+    events:
+      - http:
+          method: get
+          path: /properties
+          cors: true
+
+custom:
+  prune:
+    automatic: true
+    number: 10
+  pythonRequirements:
+    dockerizePip: non-linux
+
+package:
+  patterns:
+    - '!.git/**'
+    - '!.venv/**'
+    - '!env/**'
+    - '!node_modules/**'
+    - '!service/config/local.py'
+    - '!tests/**'

@@ -1,0 +1,20 @@
+.iam: &default_roles
+  role:
+    statements:
+    - Effect: Allow
+      Action:
+        - lambda:GetLayerVersion
+      Resource:
+        - arn:aws:lambda:*:*:layer:*:*
+  # deploymentRole: ${ssm:/ci/${self:provider.stage}/deployment_role}
+
+
+dev:
+  iam:
+    <<: *default_roles
+staging:
+  iam:
+    <<: *default_roles
+production:
+  iam:
+    <<: *default_roles
