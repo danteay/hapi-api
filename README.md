@@ -79,7 +79,7 @@ from all the business and data access logic, also makes easy to maintain all cod
 
 ### Requirement number 2 explanation
 
-![DB-ER-diagram](https://github.com/danteay/habi-api/blob/master/Habi-Liked.png?raw=true)
+![DB-ER-diagram](https://raw.githubusercontent.com/danteay/hapi-api/master/Habi-Liked.png)
 
 If we continue to use same DB structure, in order to keep tracking of all property likes of the any user
 we should implement the DB structure of the past image and create the `liked` and `liked_history` tables,
