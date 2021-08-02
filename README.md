@@ -4,6 +4,13 @@ This is a simple API with Serverless framework.
 
 **For requirement number 1 there's no state field on property table so this field was omitted on filters**
 
+## Example request
+
+```shell
+# All filters are optional
+curl --location --request GET 'http://localhost:3000/properties?status=5,3&city=medellin&year=2000'
+```
+
 ## Contents
 
 This template includes the following extra configurations:
